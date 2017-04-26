@@ -1,0 +1,167 @@
+##RenderMan RIB-Structure 1.0
+version 3.03
+
+FrameBegin 1
+
+	Display "frost.tif" "file" "rgb"
+	Format 1024 768 -1
+	ShadingRate 1
+	Projection "perspective" "fov" [30]
+	FrameAspectRatio 1.33
+
+	# Identity Matrix
+	Identity
+
+	# Default distant headlight
+	LightSource "distantlight" 1
+	LightSource "ambientlight" 2 "intensity" 0.5
+
+	# Camera
+	Translate 0 0 8
+	# Rotate 45 1 0 0
+	# Rotate 0 0 1 0
+
+	WorldBegin
+
+		Identity
+
+		# AttributeBegin
+		# 	RiGeometry ("cube", RI_NULL);
+		# AttributeEnd
+
+		# AttributeBegin
+			#Attribute "displacementbound" "float sphere" [0.65] "coordinatesystem" ["shader"]
+			# Surface "../Shaders/testing_frost_surface"
+			#Displacement "frost_displacement"
+
+
+				#	Polygon "P" [ -1 1 1  1 1 1  1 -1 1  -1 -1 1 ] # en enda sida
+
+				#	Polygon "P" [ -1 1 -1  -1 1 1  -1 -1 1  -1 -1 -1 #left
+				#	-1 -1 -1  1 -1 -1  1 -1 1  -1 -1 1  #bottom
+				#	-1 -1 1  -1 1 1  1 1 1  1 -1 1  #back
+
+				#	1 -1 1  1 -1 -1  1 1 -1  1 1 1 # right
+				#	1 1 1   -1 1 1  -1 1 -1  1 1 -1     #top
+				#	1 1 -1  -1 1 -1  -1 -1 -1  1 -1 -1  ] #front
+
+
+
+				#	Polygon "P" [ -1 1 -1  -1 1 1  -1 -1 1  -1 -1 -1] #left wall
+				#	Polygon "P" [ 1 -1 -1  1 -1 1  1 1 1  1 1 -1 ] # right wall
+				#	Polygon "P" [ -1 1 1  1 1 1  1 -1 1  -1 -1 1 ] # back wall
+				#	Polygon "P" [ -1 1 -1  -1 -1 -1  1 -1 -1  1 1 -1] # front wall
+				#	Polygon "P" [ -1 -1 -1  1 -1 -1  1 -1 1  -1 -1 1 ] # bottom wall
+				#	Polygon "P" [ -1 1 -1  1 1 -1  1 1 1  -1 1 1] # top wall
+
+			# Gray box
+				# Translate -1 -0.5 0
+				# Rotate -30 1 0 0
+				# Rotate -70 0 1 0
+				# Color [0.5 0.5 0.5]
+    #     Polygon "P" [ 0 0 0  0 0 1  0 1 1  0 1 0 ] # left side //Fel normal?
+    #     Polygon "P" [ 1 1 0  1 1 1  1 0 1  1 0 0 ] # right side
+
+    #     Polygon "P" [ 0 1 0  1 1 0  1 0 0  0 0 0 ] # front side
+    #     Polygon "P" [ 0 0 1  1 0 1  1 1 1  0 1 1 ] # back side
+
+    #     Polygon "P" [ 0 1 1  1 1 1  1 1 0  0 1 0 ] # top //fel normal?
+    #     Polygon "P" [ 0 0 1  0 0 0  1 0 0  1 0 1 ] # bottom
+
+		# AttributeEnd
+
+		AttributeBegin
+			Surface "../Shaders/testing_frost_surface"
+			Translate -1 -0.5 0
+			Rotate -30 1 0 0
+			Rotate -70 0 1 0
+			Rotate -30 0 0 1
+			Color [0.9 0.0 0.0] # Red
+			Polygon "P" [ 1 1 0  1 1 1  1 0 1  1 0 0 ] # right side
+		AttributeEnd
+		AttributeBegin
+			Surface "../Shaders/testing_frost_surface_2"
+			Translate -1 -0.5 0
+			Rotate -30 1 0 0
+			Rotate -70 0 1 0
+			Rotate -30 0 0 1
+			Color [0.0 0.9 0.0] # Green
+			Polygon "P" [ 0 0 0  0 0 1  0 1 1  0 1 0 ] # left side //Fel normal?
+		AttributeEnd
+		AttributeBegin
+			Surface "../Shaders/testing_frost_surface"
+			Translate -1 -0.5 0
+			Rotate -30 1 0 0
+			Rotate -70 0 1 0
+			Rotate -30 0 0 1
+			Color [0.0 0.0 0.9] # Blue
+			Polygon "P" [ 0 1 0  1 1 0  1 0 0  0 0 0 ] # front side
+		AttributeEnd
+		AttributeBegin
+			Surface "../Shaders/testing_frost_surface"
+			Translate -1 -0.5 0
+			Rotate -30 1 0 0
+			Rotate -70 0 1 0
+			Rotate -30 0 0 1
+			Color [0.9 0.0 0.9] #Purple
+			Polygon "P" [ 0 0 1  1 0 1  1 1 1  0 1 1 ] # back side
+		AttributeEnd
+		AttributeBegin
+			Surface "../Shaders/testing_frost_surface"
+			Translate -1 -0.5 0
+			Rotate -30 1 0 0
+			Rotate -70 0 1 0
+			Rotate -30 0 0 1
+			Color [0.8 0.5 0.0] #Yellowish
+			Polygon "P" [ 0 1 1  1 1 1  1 1 0  0 1 0 ] # top //fel normal?
+		AttributeEnd
+		AttributeBegin
+			Surface "../Shaders/testing_frost_surface"
+			Translate -1 -0.5 0
+			Rotate -30 1 0 0
+			Rotate -70 0 1 0
+			Rotate -30 0 0 1
+			Color [0.9 0.9 0.9] # Whiteish gray
+			Polygon "P" [ 0 0 1  0 0 0  1 0 0  1 0 1 ] # bottom
+		AttributeEnd
+
+
+		AttributeBegin
+			#To avoid holes in the polygon due to too small bounding box
+			#The displacement bound is a single floating-point number which specifies the maximum radial displacement (maximum amplitude, if you like) that the displacement will ever generate on any point on the surface. This length is defined to be in units of the named space (defaulting to "object"). It is important that the units and space of this attribute call match the units and space used in the displacement shader itself.
+			#In the shader we're using object-space coordinates
+			#TODO: Ställ storleken i boundinboxen när jag vet maxamplituden i shadern
+			Attribute "displacementbound" "float sphere" [0.65] "coordinatesystem" ["shader"]
+			Surface "../Shaders/frost_color_surface"
+			Displacement "../Shaders/frost_displacement"
+
+			#TODO se över polygonerna här, den andra är förmodligen mer korrekt om jag inte redan duplicerat
+			#Orange box
+				Translate 1 -0.5 0
+				Rotate -30 1 0 0
+				Rotate -30 0 1 0
+				Color [ 1 0.4 0.0]
+				Polygon "P" [ 0 0 0  0 0 1  0 1 1  0 1 0 ] # left side
+				# Polygon "P" [ 1 1 0  1 1 1  1 0 1  1 0 0 ] # right side
+
+				Polygon "P" [ 0 1 0  1 1 0  1 0 0  0 0 0 ] # front side
+				# Polygon "P" [ 0 0 1  1 0 1  1 1 1  0 1 1 ] # back side
+
+				# Polygon "P" [ 0 1 1  1 1 1  1 1 0  0 1 0 ] # top
+				# Polygon "P" [ 0 0 1  0 0 0  1 0 0  1 0 1 ] # bottom
+
+
+			#	Polygon "P" [-1.0 -1.0 0.0
+			   #           1.0 -1.0 0.0
+			  #            1.0 1.0 0.0
+			 #            -1.0 1.0 0.0
+			#			 -1.0 -1.0 -1.0
+			#               1.0 -1.0 -1.0
+			#                1.0 1.0 -1.0
+			#                -1.0 1.0 -1.0]
+
+		AttributeEnd
+
+	WorldEnd
+
+FrameEnd

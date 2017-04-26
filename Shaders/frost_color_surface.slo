@@ -1,0 +1,99 @@
+shader_obj 5.0 1 0
+frost_color_surface 35 7 18 12 18 0 0 0 0 0 13 1
+14 170
+rgb
+current
+!!anyspace!!
+/Users/KarroJ/TNM084_Frost/Shaders
+.:
+frost_color_surface.sl
+elevation
+\n%s\n
+ elevation 
+\n%f\n
+surface
+
+$meta_2009
+$meta___PRMAN_RELEASE__2009
+7
+0
+0.8999999762
+0
+0
+1
+1
+1
+0
+35
+$meta___PRMAN_RELEASE__ 6 2 -1 12 3 0 0 0 0 0 0
+$meta___PRMAN_RELEASE_TAG__ 6 2 -1 13 3 0 0 0 0 0 0
+$S0 6 2 -1 0 3 0 0 0 0 0 0
+$S2 6 2 -1 1 3 0 0 0 0 0 0
+$S6 6 2 -1 2 3 0 0 0 0 0 0
+$srcDir 6 2 -1 3 3 0 0 0 0 0 0
+$includePath 6 2 -1 4 3 0 0 0 0 0 0
+$S7 6 2 -1 5 3 0 0 0 0 1 18
+$C0 4 2 -1 0 3 0 0 0 0 2 10
+$S8 6 2 -1 6 3 0 0 0 0 6 6
+$S9 6 2 -1 7 3 0 0 0 0 7 7
+$S10 6 2 -1 8 3 0 0 0 0 7 7
+$S11 6 2 -1 9 3 0 0 0 0 8 8
+$S13 6 2 -1 10 3 0 0 1 1 0 0
+$CT0 3 2 -1 1 3 0 0 0 0 3 3
+$CT1 3 2 -1 4 3 0 0 0 0 4 4
+$S14 6 2 -1 11 3 0 0 18 18 0 0
+$result_surface 0 15 -1 0 3 0 0 0 0 0 0
+Os 3 10 0 0 2 0 0 0 0 17 17
+N 22 10 1 0 2 0 0 0 0 5 5
+Oi 3 10 0 0 2 0 0 17 17 0 0
+Ci 3 10 0 0 2 0 0 13 16 0 0
+$2_elevation 4 3 -1 0 2 0 0 2 6 6 10
+$2_surfaceColor 3 3 0 0 2 0 0 12 14 13 16
+$2_base_color 3 3 0 0 2 0 0 3 3 9 14
+$2_frost_color 3 3 0 0 2 0 0 4 4 9 12
+$2_Nn 22 3 1 0 2 0 0 5 5 9 15
+surface 13 8 -1 0 2 1 17 0 0 0 18
+$T0 4 4 -1 0 3 0 0 6 6 0 0
+$T1 11 4 -1 0 2 0 0 10 16 11 16
+$Code0 9 8 -1 0 2 0 0 0 0 11 13
+$Code1 9 8 -1 0 2 0 0 0 0 13 16
+$Code2 9 8 -1 0 2 0 0 0 0 11 11
+$Cond0 10 11 -1 0 2 0 0 11 16 11 16
+$T2 3 4 0 0 2 0 0 15 15 16 16
+42
+13 
+22 8 
+24 14 
+25 15 
+26 19 
+28 9 22 
+10 11 
+12 22 
+22 24 25 26 
+29 22 8 
+29 32 30 31 33 
+23 25 
+21 23 
+23 24 
+34 26 
+21 23 34 
+20 18 
+16 
+_enterproc 	1 0  5 1 1
+_assign 	2 1  5 2 2
+_assign 	2 3  5 4 2
+_assign 	2 5  5 5 2
+normalize 	2 7  5 6 2
+displacement 	3 9  5 7 2
+printf		2 12  5 8 2
+printf		2 14  5 9 2
+_lightingstart 	4 16  5 10 2
+_ge		3 20  5 10 2
+_if		5 23  5 10 2
+_assign 	2 28  5 11 3
+_assign 	2 30  5 13 3
+_assign 	2 32  5 16 4
+diffuse 	2 34  5 18 4
+_multiply 	3 36  5 18 4
+_assign 	2 39  5 22 2
+_enterproc 	1 41  5 1 1
